@@ -1,6 +1,6 @@
 //import libraries
 import React, { Component } from "react";
-import { View, Text } from "react-native";
+import { View, Text, ImageBackground, Image } from "react-native";
 import { Header, Left, Right, Icon } from "native-base";
 import styled from "styled-components";
 
@@ -26,14 +26,22 @@ class HomeScreen extends Component {
                         />
                     </StyledLeft>
                 </StyledHeader>
-                <View
-                    style={{
-                        flex: 1,
-                        alignItems: "center",
-                        justifyContent: "center"
-                    }}
-                >
-                    <Text>HomeScreen</Text>
+                <View>
+                    <StyledBackground
+                        source={{
+                            uri:
+                                "https://res.cloudinary.com/billpliske/image/upload/w_600/blue-chihuly.jpg"
+                        }}
+                    >
+                        <Box>
+                            <Logo
+                                source={{
+                                    uri:
+                                        "https://res.cloudinary.com/billpliske/image/upload/w_500/bill-logo.png"
+                                }}
+                            />
+                        </Box>
+                    </StyledBackground>
                 </View>
             </StyledView>
         );
@@ -61,6 +69,24 @@ const StyledHeader = styled(Header)`
 
 const Styledleft = styled(Left)`
     align-items: flex-start;
+`;
+
+const StyledBackground = styled.ImageBackground`
+    width: 100%;
+    height: 200px;
+    position: absolute;
+    text-align: center;
+`;
+
+const Box = styled.View`
+    background-color: rgba(0, 0, 0, 0.3);
+    flex: 1;
+`;
+
+const Logo = styled.Image`
+    width: 330px;
+    height: 80px;
+    margin: 60px auto 0 auto;
 `;
 
 export default HomeScreen;

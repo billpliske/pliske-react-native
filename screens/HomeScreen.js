@@ -19,12 +19,12 @@ class HomeScreen extends Component {
         return (
             <StyledView>
                 <StyledHeader>
-                    <Left>
-                        <Icon
+                    <StyledLeft>
+                        <StyledIcon
                             name="menu"
                             onPress={() => this.props.navigation.openDrawer()}
                         />
-                    </Left>
+                    </StyledLeft>
                 </StyledHeader>
                 <View
                     style={{
@@ -43,6 +43,15 @@ class HomeScreen extends Component {
 // define your styles
 const StyledView = styled.View`
     flex: 1;
+`;
+
+const StyledLeft = styled(Left)`
+    flex: 1;
+    padding-left: 20px;
+`;
+
+const StyledIcon = styled(Icon)`
+    color: #ffffff;
 `;
 
 const StyledHeader = styled(Header)`

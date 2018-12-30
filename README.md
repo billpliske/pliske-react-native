@@ -10,6 +10,12 @@
 
 -   Only seemed to get TTFs to work.
 -   Converted some woff2 to ttfs — and lmited how many I amusing, since file size for each was around 90k.
+-   When trying to use a custom font for drawer items, it doesn't work unless you first specify fontweight 'normal' ... crazy, but that works.
+-   labelStyle: {
+    fontSize: 20,
+    fontWeight: "normal",
+    fontFamily: "raleway-black"
+    }
 
 ## Custom icons
 

@@ -45,7 +45,10 @@ const AppDrawerNavigator = createDrawerNavigator(
         contentOptions: {
             activeTintColor: "#ffffff",
             labelStyle: {
-                fontSize: 20
+                fontSize: 20,
+                fontWeight: "normal",
+                fontFamily: "raleway-bold",
+                padding: 10
             }
         }
     }
@@ -66,8 +69,8 @@ const MenuHeader = styled.View`
 `;
 
 const Title = styled.Text`
-    font-family: raleway-bolditalic;
-    font-size: 28px;
+    font-family: raleway-blackitalic;
+    font-size: 26px;
     color: #ffffff;
     padding: 0 0 18px 0px;
     text-align: center;

@@ -1,0 +1,3 @@
+rootProject.name = 'billpliske_native'
+
+include ':app'

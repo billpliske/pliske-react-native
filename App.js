@@ -1,56 +1,95 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow
- */
-
 import React, { Component } from "react";
-import { Platform, StyleSheet, Text, View } from "react-native";
-import styled from "styled-components";
+import {
+    Text,
+    View,
+    SafeAreaView,
+    ScrollView,
+    Dimensions,
+    Image
+} from "react-native";
+import styled from "styled-components/native";
+import { createDrawerNavigator, DrawerItems } from "react-navigation";
+import HomeScreen from "./screens/HomeScreen";
+import ResumeScreen from "./screens/ResumeScreen";
+import ProjectsScreen from "./screens/ProjectsScreen";
 
-const instructions = Platform.select({
-    ios: "Press Cmd+R to reload,\n" + "Cmd+D or shake for dev menu",
-    android:
-        "Double tap R on your keyboard to reload,\n" +
-        "Shake or press menu button for dev menu"
-});
-
-type Props = {};
-export default class App extends Component<Props> {
+// const { width } = Dimensions.get("window");
+class App extends React.Component {
     render() {
-        return (
-            <View style={styles.container}>
-                <Title>Welcome to React Native.</Title>
-                <Text style={styles.instructions}>
-                    To get started, edit App.js
-                </Text>
-                <Text style={styles.instructions}>{instructions}</Text>
-            </View>
-        );
+        return <AppDrawerNavigator />;
     }
 }
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundColor: "#F5FCFF"
+// COMPONENTS HERE
+
+const CustomDrawerComponent = props => (
+    <Wrapper>
+        <MenuHeader>
+            <Icon source={require("./assets/billcartoon_400x400.jpg")} />
+        </MenuHeader>
+        <ScrollView>
+            <Title>billpliske.com</Title>
+            <StyledDrawerItems {...props} />
+        </ScrollView>
+    </Wrapper>
+);
+
+const AppDrawerNavigator = createDrawerNavigator(
+    {
+        Home: HomeScreen,
+        Resume: ResumeScreen,
+        Projects: ProjectsScreen
     },
-    instructions: {
-        textAlign: "center",
-        color: "#333333",
-        marginBottom: 5
+    {
+        contentComponent: CustomDrawerComponent,
+        contentOptions: {
+            activeTintColor: "#ffffff",
+            labelStyle: {
+                fontSize: 20
+            }
+        }
     }
-});
+);
+
+// STYLES HERE
+
+const Wrapper = styled.SafeAreaView`
+    flex: 1;
+    background-color: #6d76ff;
+`;
+
+const MenuHeader = styled.View`
+    height: 150px;
+    background-color: #6d76ff;
+    align-items: center;
+    justify-content: center;
+`;
 
 const Title = styled.Text`
-    color: red;
-    font-size: 50px;
-    line-height: 50px;
+    font-family: raleway-bolditalic;
+    font-size: 28px;
+    color: #ffffff;
+    padding: 0 0 18px 0px;
     text-align: center;
-    font-family: "raleway-black";
-    letter-spacing: -2px;
 `;
+
+const Icon = styled.Image`
+    width: 120px;
+    height: 120px;
+    border-radius: 60px;
+`;
+
+const StyledDrawerItems = styled(DrawerItems)`
+    font-size: 25px;
+`;
+
+// const Title = styled.Text`
+//     color: #6d76ff;
+//     font-size: 50px;
+//     line-height: 50px;
+//     text-align: center;
+//     font-family: "raleway-black";
+//     letter-spacing: -2px;
+// `;
+
+export default App;

@@ -10,3 +10,7 @@
 
 -   Only seemed to get TTFs to work.
 -   Converted some woff2 to ttfs — and lmited how many I amusing, since file size for each was around 90k.
+
+## Custom icons
+
+-   https://oblador.github.io/react-native-vector-icons/

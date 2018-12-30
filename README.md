@@ -20,3 +20,7 @@
 ## Custom icons
 
 -   https://oblador.github.io/react-native-vector-icons/
+
+## Layout quirks
+
+-   Bottom bar on Android overlapping the bottom of ScrollView? Throw in an inner View, and add some padding-bottom to it.

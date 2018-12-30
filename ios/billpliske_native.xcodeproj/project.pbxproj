@@ -122,6 +122,8 @@
 		5FB0849052C44F0C8AAB331C /* rubicon-icon-font.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDB98A141F2F4D5B9543354C /* rubicon-icon-font.ttf */; };
 		735DD361A4C54269AC0181CA /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7E87CC597CED4EE1BFC11CFE /* SimpleLineIcons.ttf */; };
 		67AD6C1208014468AD41B0E0 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D2477A8EE0384C40AB551525 /* Zocial.ttf */; };
+		1E7DC6BB8C8F4400BFE4A103 /* raleway-extralight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A0A0EFD148EE4159943611DA /* raleway-extralight.ttf */; };
+		2D4798547C4447C8A07EF764 /* raleway-extralightitalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7186BE2F570545D98781FD78 /* raleway-extralightitalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -513,6 +515,8 @@
 		BDB98A141F2F4D5B9543354C /* rubicon-icon-font.ttf */ = {isa = PBXFileReference; name = "rubicon-icon-font.ttf"; path = "../node_modules/native-base/Fonts/rubicon-icon-font.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7E87CC597CED4EE1BFC11CFE /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/native-base/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		D2477A8EE0384C40AB551525 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/native-base/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A0A0EFD148EE4159943611DA /* raleway-extralight.ttf */ = {isa = PBXFileReference; name = "raleway-extralight.ttf"; path = "../assets/fonts/raleway-extralight.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		7186BE2F570545D98781FD78 /* raleway-extralightitalic.ttf */ = {isa = PBXFileReference; name = "raleway-extralightitalic.ttf"; path = "../assets/fonts/raleway-extralightitalic.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -863,6 +867,8 @@
 				BDB98A141F2F4D5B9543354C /* rubicon-icon-font.ttf */,
 				7E87CC597CED4EE1BFC11CFE /* SimpleLineIcons.ttf */,
 				D2477A8EE0384C40AB551525 /* Zocial.ttf */,
+				A0A0EFD148EE4159943611DA /* raleway-extralight.ttf */,
+				7186BE2F570545D98781FD78 /* raleway-extralightitalic.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1397,6 +1403,8 @@
 				5FB0849052C44F0C8AAB331C /* rubicon-icon-font.ttf in Resources */,
 				735DD361A4C54269AC0181CA /* SimpleLineIcons.ttf in Resources */,
 				67AD6C1208014468AD41B0E0 /* Zocial.ttf in Resources */,
+				1E7DC6BB8C8F4400BFE4A103 /* raleway-extralight.ttf in Resources */,
+				2D4798547C4447C8A07EF764 /* raleway-extralightitalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -28,7 +28,7 @@ const CustomDrawerComponent = props => (
             <Icon source={require("./assets/billcartoon_400x400.jpg")} />
         </MenuHeader>
         <ScrollView>
-            <Title>billpliske.com</Title>
+            <Title>bill pliske</Title>
             <StyledDrawerItems {...props} />
         </ScrollView>
     </Wrapper>
@@ -72,7 +72,7 @@ const Title = styled.Text`
     font-family: raleway-blackitalic;
     font-size: 26px;
     color: #ffffff;
-    padding: 0 0 18px 0px;
+    padding: 0 0 28px 0px;
     text-align: center;
 `;
 

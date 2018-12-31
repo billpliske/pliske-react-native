@@ -1,6 +1,12 @@
 //import libraries
 import React, { Component } from "react";
-import { ScrollView, View, Text } from "react-native";
+import {
+    ScrollView,
+    View,
+    Text,
+    TouchableOpacity,
+    Linking
+} from "react-native";
 import { Header, Left, Icon } from "native-base";
 import styled from "styled-components";
 
@@ -33,13 +39,34 @@ class ResumeScreen extends Component {
                     <InnerWrapper>
                         <Title>Resume</Title>
                         <Where>
-                            <Item>
-                                <Strong>email: </Strong>
-                                bpliske@gmail.com
-                            </Item>
-                            <Item>
-                                <Strong>web: </Strong>www.billpliske.com
-                            </Item>
+                            <Top>
+                                <Text>
+                                    <Strong>email: </Strong>
+                                    <LinkText
+                                        onPress={() =>
+                                            Linking.openURL(
+                                                "mailto: bpliske@gmail.com"
+                                            )
+                                        }
+                                    >
+                                        bpliske@gmail.com
+                                    </LinkText>
+                                </Text>
+                            </Top>
+                            <Top>
+                                <Text>
+                                    <Strong>web: </Strong>
+                                    <LinkText
+                                        onPress={() =>
+                                            Linking.openURL(
+                                                "https:/www.billpliske.com"
+                                            )
+                                        }
+                                    >
+                                        www.billpliske.com
+                                    </LinkText>
+                                </Text>
+                            </Top>
                         </Where>
 
                         <View>
@@ -393,6 +420,14 @@ const Title = styled.Text`
     font-size: 60px;
     margin-bottom: 5px;
     color: #6d76ff;
+`;
+
+const Top = styled.View`
+    margin: 0 0 20px 0;
+`;
+
+const LinkText = styled.Text`
+    text-decoration: underline;
 `;
 
 const Item = styled.Text`

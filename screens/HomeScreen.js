@@ -64,16 +64,6 @@ class HomeScreen extends Component {
                         </AboutText>
 
                         <AboutText>
-                            With the ability to manage both dev and design, I
-                            bring the potential to save your organization money
-                            by hiring one person, instead of two. The same can
-                            be said for doing the hands-on work of those two
-                            very different jobs. Having experience in both those
-                            areas makes me a strong product management candidate
-                            as well.
-                        </AboutText>
-
-                        <AboutText>
                             Beyond my technical skills with the keyboard, I have
                             <Strong> years of experience </Strong> coaching my
                             staff, finding their strengths and honing their
@@ -98,6 +88,57 @@ class HomeScreen extends Component {
                             business was a nice way to keep up with technology
                             trends in a field that's constantly moving.
                         </AboutText>
+
+                        <Subhead>About this app</Subhead>
+                        <AboutText>
+                            I built this React Native version of my website over
+                            a weekend, and picked up some interesting tidbits of
+                            knowledge along the way. The first obvious thing:
+                            This framework is constantly evolving. Its big
+                            sister, React, is much more mature, with a larger
+                            ecosystem and array of libraries to choose from.
+                            That said, here are a few bullet points from this
+                            experience:
+                        </AboutText>
+
+                        <Item>
+                            {"\u2022" + " "}
+                            Expo might get you on your feet quicker, but the
+                            Native approach gives you more control.
+                        </Item>
+                        <Item>
+                            {"\u2022" + " "}
+                            Set aside some time to get Android Studio up to
+                            date, especially if your laptop isn't a gazelle.
+                            Mine was still going on throughout the length of a
+                            Sunday NFL game.
+                        </Item>
+                        <Item>
+                            {"\u2022" + " "}
+                            Convert any custom fonts to TTFs. While WOFF, and
+                            WOFF2 fonts are smaller in file size, there were
+                            just too many issues.
+                        </Item>
+                        <Item>
+                            {"\u2022" + " "}
+                            With Android, unless you <Strong>also</Strong> add a
+                            font-weight to your CSS, you'll continue to see
+                            Roboto instead of your custom font. Strange, but
+                            true.
+                        </Item>
+                        <Item>
+                            {"\u2022" + " "}
+                            The bottom virtual "home" bar in Android might cover
+                            up some of your lowest content. If so, you'll need
+                            to add an extra View container — throw your
+                            padding-bottom in that one. Problem solved.
+                        </Item>
+                        <Item>
+                            {"\u2022" + " "}
+                            <Strong> Libraries I used: </Strong>{" "}
+                            styled-components, native-base, react-navigation,
+                            and react-native-vector-icons (awesome).
+                        </Item>
                     </AboutView>
                 </StyledScrollView>
             </StyledView>
@@ -188,6 +229,18 @@ const AboutText = styled.Text`
 
 const Strong = styled.Text`
     font-weight: bold;
+`;
+
+const Item = styled.Text`
+    padding: 0 0 20px 20px;
+    font-size: 16px;
+    line-height: 21px;
+`;
+
+const Subhead = styled.Text`
+    font-family: "raleway-bold";
+    font-size: 17px;
+    padding: 20px 0 5px 0;
 `;
 
 export default HomeScreen;

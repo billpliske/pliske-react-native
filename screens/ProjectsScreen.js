@@ -208,6 +208,7 @@ const Container = styled.View`
     width: 65%;
     margin: 0 auto;
     text-align: center;
+    padding-bottom: 30px;
 `;
 
 const ProjectItem = styled.View`

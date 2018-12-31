@@ -20,7 +20,7 @@ const CustomDrawerComponent = props => (
             <Icon source={require("./assets/billcartoon_400x400.jpg")} />
         </MenuHeader>
         <ScrollView>
-            <Title>bill pliske</Title>
+            <Title>pliske</Title>
             <Is>is</Is>
             <Subtitle>made with React Native.</Subtitle>
             <StyledDrawerItems {...props} />

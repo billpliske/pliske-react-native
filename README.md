@@ -4,7 +4,24 @@
 
 -   used Native Code approach
 -   Set up Android emulator with these instructions: https://facebook.github.io/react-native/docs/getting-started
--   used teh client: npm install -g react-native-cli
+-   used the client: npm install -g react-native-cli
+
+## Common commands
+
+-   react-native run-android
+-   react-native link
+-   react-native run-android --variant=release
+-   ./gradlew assembleRelease (cd to android folder, first)
+-   adb uninstall com.billpliske_native
+
+## Updating the app in Android
+
+1.  android/app/build.gradle
+2.  update versionCode (whole numbers) and versionName(dot upgrades)
+3.  cd to android folder
+4.  ./gradlew assembleRelease
+5.  cd back out to main folder, and test with ...
+6.  react-native run-android --variant=release
 
 ## Custom Fonts
 

@@ -19,7 +19,8 @@ export default [
         client: "SixFive Agency",
         role: "Design, development",
         launched: "December 2018",
-        url: "http://www.jddspecialties.com/",
+        url:
+            "https://play.google.com/store/apps/details?id=com.billpliske_native",
         image:
             "https://res.cloudinary.com/billpliske/image/upload/v1546273049/billpliske-native.jpg"
     },

@@ -1,6 +1,13 @@
 //import libraries
 import React, { Component } from "react";
-import { ScrollView, View, Text, ImageBackground, Image } from "react-native";
+import {
+    ScrollView,
+    View,
+    Text,
+    ImageBackground,
+    Image,
+    Linking
+} from "react-native";
 import { Header, Left, Icon } from "native-base";
 import styled from "styled-components";
 
@@ -84,9 +91,18 @@ class HomeScreen extends Component {
                         <AboutText>
                             In addition to the jobs below, I've also run a
                             freelance design business. As my day job transformed
-                            over the years from designer to director, my side
-                            business was a nice way to keep up with technology
-                            trends in a field that's constantly moving.
+                            over the years from designer to director, my{" "}
+                            <LinkText
+                                onPress={() =>
+                                    Linking.openURL(
+                                        "https://www.sixfiveagency.com"
+                                    )
+                                }
+                            >
+                                side business
+                            </LinkText>{" "}
+                            was a nice way to keep up with technology trends in
+                            a field that's constantly moving.
                         </AboutText>
 
                         <Subhead>About this app</Subhead>
@@ -241,6 +257,11 @@ const Subhead = styled.Text`
     font-family: "raleway-bold";
     font-size: 17px;
     padding: 20px 0 5px 0;
+`;
+
+const LinkText = styled.Text`
+    text-decoration: underline;
+    color: #6d76ff;
 `;
 
 export default HomeScreen;

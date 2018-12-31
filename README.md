@@ -5,6 +5,7 @@
 -   used Native Code approach
 -   Set up Android emulator with these instructions: https://facebook.github.io/react-native/docs/getting-started
 -   used the client: npm install -g react-native-cli
+-   hiding Store passwords: https://pilloxa.gitlab.io/posts/safer-passwords-in-gradle/
 
 ## Common commands
 

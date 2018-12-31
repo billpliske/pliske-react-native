@@ -1,8 +1,15 @@
 //import libraries
 import React, { Component } from "react";
-import { ScrollView, View, Text } from "react-native";
+import {
+    ScrollView,
+    View,
+    Text,
+    Linking,
+    TouchableOpacity
+} from "react-native";
 import { Header, Left, Icon } from "native-base";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
+import portfolio from "../assets/portfolio.js";
 
 // create a component
 class ProjectsScreen extends Component {
@@ -54,11 +61,46 @@ class ProjectsScreen extends Component {
                             </Item>
                         </Where>
 
-                        <View>
-                            <Category>EXPERIENCE</Category>
+                        <Container>
+                            {portfolio.map((item, index) => {
+                                return (
+                                    <ProjectItem key={item.id}>
+                                        <Image
+                                            source={{
+                                                uri: item.image
+                                            }}
+                                            alt={item.title}
+                                        />
 
-                            <Position>Front-End Development Manager</Position>
-                        </View>
+                                        <Project>{item.title}</Project>
+                                        <Summary>{item.summary}</Summary>
+                                        <Client>
+                                            {"\u2022" + " "}
+                                            <Strong>Client:</Strong>{" "}
+                                            {item.client}
+                                        </Client>
+                                        <Role>
+                                            {"\u2022" + " "}
+                                            <Strong>Role:</Strong> {item.role}
+                                        </Role>
+                                        <Launched>
+                                            {"\u2022" + " "}
+                                            <Strong>Launched:</Strong>{" "}
+                                            {item.launched}
+                                        </Launched>
+                                        <StyledButton
+                                            transparent
+                                            title="Visit"
+                                            onPress={() =>
+                                                Linking.openURL(item.url)
+                                            }
+                                        >
+                                            <VisitText>Visit</VisitText>
+                                        </StyledButton>
+                                    </ProjectItem>
+                                );
+                            })}
+                        </Container>
                     </InnerWrapper>
                 </ContentWrapper>
             </StyledView>
@@ -159,6 +201,88 @@ const Did = styled.View`
 
 const Strong = styled.Text`
     font-weight: bold;
+`;
+
+const Container = styled.View`
+    position: relative;
+    width: 65%;
+    margin: 0 auto;
+    text-align: center;
+`;
+
+const ProjectItem = styled.View`
+    position: relative;
+    margin-top: 60px;
+`;
+
+const Image = styled.Image`
+    padding: 0px;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
+    border-radius: 110px;
+    border-width: 3px;
+    border-color: #6d76ff;
+`;
+
+const Project = styled.Text`
+    position: relative;
+    color: #6d76ff;
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 49px;
+    margin: 10px 0;
+    letter-spacing: -1px;
+    font-family: "raleway-blackitalic";
+    text-align: center;
+`;
+
+const Summary = styled.Text`
+    position: relative;
+    font-size: 17px;
+    line-height: 22px;
+    text-align: center;
+`;
+
+// -----------------------
+// shared styles
+// -----------------------
+
+const sharedStyle = css`
+    position: relative;
+    font-size: 15px;
+    line-height: 19px;
+    /* border-top: 1px solid #ccc; */
+    padding: 7px 0 0 15px;
+    margin-top: 10px;
+    font-style: italic;
+    text-align: center;
+`;
+
+const Client = styled.Text`
+    ${sharedStyle};
+`;
+
+const Role = styled.Text`
+    ${sharedStyle};
+`;
+
+const Launched = styled.Text`
+    ${sharedStyle};
+`;
+
+const StyledButton = styled.TouchableOpacity`
+    position: relative;
+    background-color: #6d76ff;
+    padding: 15px 40px;
+    margin: 15px auto;
+    width: 120px;
+`;
+
+const VisitText = styled.Text`
+    color: #fff;
+    font-family: "raleway-bold";
+    text-align: center;
 `;
 
 export default ProjectsScreen;

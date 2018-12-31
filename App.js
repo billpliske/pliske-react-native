@@ -1,19 +1,11 @@
 import React, { Component } from "react";
-import {
-    Text,
-    View,
-    SafeAreaView,
-    ScrollView,
-    Dimensions,
-    Image
-} from "react-native";
+import { Text, View, ScrollView, Dimensions, Image } from "react-native";
 import styled from "styled-components/native";
 import { createDrawerNavigator, DrawerItems } from "react-navigation";
 import HomeScreen from "./screens/HomeScreen";
 import ResumeScreen from "./screens/ResumeScreen";
 import ProjectsScreen from "./screens/ProjectsScreen";
 
-// const { width } = Dimensions.get("window");
 class App extends React.Component {
     render() {
         return <AppDrawerNavigator />;
@@ -58,7 +50,7 @@ const AppDrawerNavigator = createDrawerNavigator(
 
 // STYLES HERE
 
-const Wrapper = styled.SafeAreaView`
+const Wrapper = styled.View`
     flex: 1;
     background-color: #6d76ff;
 `;

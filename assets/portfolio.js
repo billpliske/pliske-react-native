@@ -14,7 +14,7 @@ export default [
     },
     {
         id: "2",
-        title: "BillPliske, Native",
+        title: "Pliske Native",
         summary: "React Native version of my resume and portfolio",
         client: "SixFive Agency",
         role: "Design, development",

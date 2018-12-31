@@ -29,6 +29,8 @@ const CustomDrawerComponent = props => (
         </MenuHeader>
         <ScrollView>
             <Title>bill pliske</Title>
+            <Is>is</Is>
+            <Subtitle>made with React Native.</Subtitle>
             <StyledDrawerItems {...props} />
         </ScrollView>
     </Wrapper>
@@ -71,6 +73,22 @@ const MenuHeader = styled.View`
 const Title = styled.Text`
     font-family: raleway-blackitalic;
     font-size: 26px;
+    color: #ffffff;
+    padding: 0 0 0px 0px;
+    text-align: center;
+`;
+
+const Is = styled.Text`
+    font-family: raleway-bold;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 0 0 0px 0px;
+    text-align: center;
+`;
+
+const Subtitle = styled.Text`
+    font-family: raleway-bold;
+    font-size: 14px;
     color: #ffffff;
     padding: 0 0 28px 0px;
     text-align: center;

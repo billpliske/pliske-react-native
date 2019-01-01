@@ -5,14 +5,35 @@ import {
     View,
     Text,
     Linking,
-    TouchableOpacity
+    TouchableOpacity,
+    Modal
 } from "react-native";
-import { Header, Left, Icon } from "native-base";
+import { Header, Left, Right, Icon } from "native-base";
 import styled, { css } from "styled-components";
 import portfolio from "../assets/portfolio.js";
+import SharedHeader from "../components/SharedHeader";
+import SharedModal from "../components/SharedModal";
 
 // create a component
 class ProjectsScreen extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            modalVisible: false
+        };
+    }
+
+    toggleModal = () => {
+        this.setState(prevState => ({
+            modalVisible: !prevState.modalVisible
+        }));
+    };
+
+    myOpenDrawer = () => {
+        this.props.navigation.openDrawer();
+    };
+
     static navigationOptions = {
         drawerIcon: ({ tintColor }) => (
             <Icon
@@ -25,17 +46,15 @@ class ProjectsScreen extends Component {
     render() {
         return (
             <StyledView>
-                <StyledHeader>
-                    <StyledLeft>
-                        <StyledIcon
-                            name="menu"
-                            onPress={() => this.props.navigation.openDrawer()}
-                        />
-                        <Title>
-                            <TopHeaderText>Pliske, native.</TopHeaderText>
-                        </Title>
-                    </StyledLeft>
-                </StyledHeader>
+                <SharedHeader
+                    openMyDrawer={this.myOpenDrawer}
+                    toggleModal={this.toggleModal}
+                />
+                <SharedModal
+                    visible={this.state.modalVisible}
+                    toggleModal={this.toggleModal}
+                />
+
                 <ContentWrapper>
                     <InnerWrapper>
                         <Title>Projects</Title>
@@ -113,31 +132,6 @@ const StyledView = styled.View`
     flex: 1;
 `;
 
-const StyledLeft = styled(Left)`
-    flex: 1;
-    padding-left: 20px;
-    flex-direction: row;
-    align-items: flex-start;
-`;
-
-const StyledIcon = styled(Icon)`
-    color: #ffffff;
-    margin-right: 10px;
-`;
-
-const TopHeaderText = styled.Text`
-    font-size: 24px;
-    padding-top: 4px;
-    font-weight: normal;
-    font-family: "raleway-bold";
-    opacity: 0.3;
-`;
-
-const StyledHeader = styled(Header)`
-    padding: 0px;
-    margin: 0;
-`;
-
 const ContentWrapper = styled.ScrollView`
     position: relative;
     margin: 0 auto 0 auto;
@@ -166,14 +160,6 @@ const Where = styled.View`
     margin: 0px 0 10px 0;
 `;
 
-const Category = styled.Text`
-    margin: 30px 0 0 0;
-    font-size: 17px;
-    letter-spacing: 14px;
-    color: #555555;
-    font-family: "raleway-black";
-`;
-
 const Position = styled.Text`
     font-size: 28px;
     line-height: 31px;
@@ -182,21 +168,6 @@ const Position = styled.Text`
     color: #6d76ff;
     font-weight: 300;
     font-family: "raleway-bolditalic";
-`;
-
-const Place = styled.Text`
-    font-size: 20px;
-    line-height: 22px;
-    margin: 2px 0;
-`;
-
-const Time = styled.Text`
-    font-style: italic;
-    margin: 0 0 20px 0;
-`;
-
-const Did = styled.View`
-    margin: -10px 0 20px 30px;
 `;
 
 const Strong = styled.Text`

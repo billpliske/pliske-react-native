@@ -6,13 +6,35 @@ import {
     Text,
     ImageBackground,
     Image,
-    Linking
+    Linking,
+    TouchableOpacity,
+    Modal
 } from "react-native";
-import { Header, Left, Icon } from "native-base";
+import { Header, Left, Right, Icon } from "native-base";
 import styled from "styled-components";
+import SharedHeader from "../components/SharedHeader";
+import SharedModal from "../components/SharedModal";
 
 // create a component
 class HomeScreen extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            modalVisible: false
+        };
+    }
+
+    toggleModal = () => {
+        this.setState(prevState => ({
+            modalVisible: !prevState.modalVisible
+        }));
+    };
+
+    myOpenDrawer = () => {
+        this.props.navigation.openDrawer();
+    };
+
     static navigationOptions = {
         drawerIcon: ({ tintColor }) => (
             <Icon
@@ -25,17 +47,14 @@ class HomeScreen extends Component {
     render() {
         return (
             <StyledView>
-                <StyledHeader>
-                    <StyledLeft>
-                        <StyledIcon
-                            name="menu"
-                            onPress={() => this.props.navigation.openDrawer()}
-                        />
-                        <Title>
-                            <TopHeaderText>Pliske, native.</TopHeaderText>
-                        </Title>
-                    </StyledLeft>
-                </StyledHeader>
+                <SharedHeader
+                    openMyDrawer={this.myOpenDrawer}
+                    toggleModal={this.toggleModal}
+                />
+                <SharedModal
+                    visible={this.state.modalVisible}
+                    toggleModal={this.toggleModal}
+                />
                 <StyledScrollView>
                     <BackgroundContainer>
                         <StyledBackground
@@ -54,6 +73,7 @@ class HomeScreen extends Component {
                             </Box>
                         </StyledBackground>
                     </BackgroundContainer>
+
                     <Caption>
                         <Strong> Above: </Strong> Dale Chihuly glass exhibit
                         from my 2014 wedding ceremony. Photo by Pat Shannahan
@@ -104,57 +124,6 @@ class HomeScreen extends Component {
                             was a nice way to keep up with technology trends in
                             a field that's constantly moving.
                         </AboutText>
-
-                        <Subhead>About this app</Subhead>
-                        <AboutText>
-                            I built this React Native version of my website over
-                            a weekend, and picked up some interesting tidbits of
-                            knowledge along the way. The first obvious thing:
-                            This framework is constantly evolving. Its big
-                            sister, React, is much more mature, with a larger
-                            ecosystem and array of libraries to choose from.
-                            That said, here are a few bullet points from this
-                            experience:
-                        </AboutText>
-
-                        <Item>
-                            {"\u2022" + " "}
-                            Expo might get you on your feet quicker, but the
-                            Native approach gives you more control.
-                        </Item>
-                        <Item>
-                            {"\u2022" + " "}
-                            Set aside some time to get Android Studio up to
-                            date, especially if your laptop isn't a gazelle.
-                            Mine was still going on throughout the length of a
-                            Sunday NFL game.
-                        </Item>
-                        <Item>
-                            {"\u2022" + " "}
-                            Convert any custom fonts to TTFs. While WOFF, and
-                            WOFF2 fonts are smaller in file size, there were
-                            just too many issues.
-                        </Item>
-                        <Item>
-                            {"\u2022" + " "}
-                            With Android, unless you <Strong>also</Strong> add a
-                            font-weight to your CSS, you'll continue to see
-                            Roboto instead of your custom font. Strange, but
-                            true.
-                        </Item>
-                        <Item>
-                            {"\u2022" + " "}
-                            The bottom virtual "home" bar in Android might cover
-                            up some of your lowest content. If so, you'll need
-                            to add an extra View container — throw your
-                            padding-bottom in that one. Problem solved.
-                        </Item>
-                        <Item>
-                            {"\u2022" + " "}
-                            <Strong> Libraries I used: </Strong>{" "}
-                            styled-components, native-base, react-navigation,
-                            and react-native-vector-icons (awesome).
-                        </Item>
                     </AboutView>
                 </StyledScrollView>
             </StyledView>
@@ -165,31 +134,6 @@ class HomeScreen extends Component {
 // define your styles
 const StyledView = styled.View`
     flex: 1;
-`;
-
-const StyledLeft = styled(Left)`
-    flex: 1;
-    padding-left: 20px;
-    flex-direction: row;
-    align-items: flex-start;
-`;
-
-const StyledIcon = styled(Icon)`
-    color: #ffffff;
-    margin-right: 10px;
-`;
-
-const TopHeaderText = styled.Text`
-    font-size: 24px;
-    padding-top: 4px;
-    font-weight: normal;
-    font-family: "raleway-bold";
-    opacity: 0.3;
-`;
-
-const StyledHeader = styled(Header)`
-    padding: 0px;
-    margin: 0;
 `;
 
 const StyledScrollView = styled.ScrollView`

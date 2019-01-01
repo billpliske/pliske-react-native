@@ -5,13 +5,34 @@ import {
     View,
     Text,
     TouchableOpacity,
-    Linking
+    Linking,
+    Modal
 } from "react-native";
-import { Header, Left, Icon } from "native-base";
+import { Header, Left, Right, Icon } from "native-base";
 import styled from "styled-components";
+import SharedHeader from "../components/SharedHeader";
+import SharedModal from "../components/SharedModal";
 
 // create a component
 class ResumeScreen extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            modalVisible: false
+        };
+    }
+
+    toggleModal = () => {
+        this.setState(prevState => ({
+            modalVisible: !prevState.modalVisible
+        }));
+    };
+
+    myOpenDrawer = () => {
+        this.props.navigation.openDrawer();
+    };
+
     static navigationOptions = {
         drawerIcon: ({ tintColor }) => (
             <Icon
@@ -22,19 +43,18 @@ class ResumeScreen extends Component {
         )
     };
     render() {
+        const { openMyDrawer } = this.props;
         return (
             <StyledView>
-                <StyledHeader>
-                    <StyledLeft>
-                        <StyledIcon
-                            name="menu"
-                            onPress={() => this.props.navigation.openDrawer()}
-                        />
-                        <Title>
-                            <TopHeaderText>Pliske, native.</TopHeaderText>
-                        </Title>
-                    </StyledLeft>
-                </StyledHeader>
+                <SharedHeader
+                    openMyDrawer={this.myOpenDrawer}
+                    toggleModal={this.toggleModal}
+                />
+                <SharedModal
+                    visible={this.state.modalVisible}
+                    toggleModal={this.toggleModal}
+                />
+
                 <ContentWrapper>
                     <InnerWrapper>
                         <Title>Resume</Title>
@@ -377,31 +397,6 @@ class ResumeScreen extends Component {
 // define your styles
 const StyledView = styled.View`
     flex: 1;
-`;
-
-const StyledLeft = styled(Left)`
-    flex: 1;
-    padding-left: 20px;
-    flex-direction: row;
-    align-items: flex-start;
-`;
-
-const StyledIcon = styled(Icon)`
-    color: #ffffff;
-    margin-right: 10px;
-`;
-
-const TopHeaderText = styled.Text`
-    font-size: 24px;
-    padding-top: 4px;
-    font-weight: normal;
-    font-family: "raleway-bold";
-    opacity: 0.3;
-`;
-
-const StyledHeader = styled(Header)`
-    padding: 0px;
-    margin: 0;
 `;
 
 const ContentWrapper = styled.ScrollView`

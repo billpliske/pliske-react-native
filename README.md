@@ -27,7 +27,7 @@ Play Store location: https://play.google.com/store/apps/details?id=com.billplisk
 4.  `cd` to android folder
 5.  In terminal, run `./gradlew assembleRelease` ... which builds out a new apk file.
 6.  `cd` back out to main repo folder, and test with ...
-7.  `react-native run-android --variant=release`
+7.  `react-native run-android --variant=release` (you might need to shut down the emulator before this step works)
 8.  If everything seems to work fine, go ahead and add a new release in your Play Developer Console.
 
 ## Debugging

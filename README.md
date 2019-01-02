@@ -6,10 +6,11 @@ Play Store location: https://play.google.com/store/apps/details?id=com.billplisk
 
 ## Set up
 
--   uUsed Native Code approach, not Expo.
+-   Used Native Code approach, not Expo.
 -   Set up Android emulator with these instructions: https://facebook.github.io/react-native/docs/getting-started
 -   uUsed the main cl npm install -g react-native-cli
 -   How to hide Store passwords so they aren't in code: https://pilloxa.gitlab.io/posts/safer-passwords-in-gradle/
+-   Create launcher icons: https://romannurik.github.io/AndroidAssetStudio/icons-launcher.html
 
 ## Common commands
 

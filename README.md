@@ -1,6 +1,6 @@
 # React Native version of billpliske.com
 
-I build this over a weekend, to see how the process has evolved, plus to get some extra RN reps under my belt. I only put up an Android version, because I already had a developer's license. Apple changes way too much for a license, even more so when you're putting up free apps, with no potential income.
+I build this over a weekend, to see how the process has evolved, plus to get some extra RN reps under my belt. I only put up an Android version, because I already had a developer's license. Apple charges way too much for a license, even more so when you're putting up free apps, with no potential income.
 
 Play Store location: https://play.google.com/store/apps/details?id=com.billpliske_native
 

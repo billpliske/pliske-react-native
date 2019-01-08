@@ -1,3 +1,5 @@
 Features
-☐ Add page transitions
-☐ Add modal: https://www.npmjs.com/package/react-native-modal
+✔ Add modal: https://www.npmjs.com/package/react-native-modal @done(19-01-05 18:34)
+☐ Add page transitions (optional)
+    https://github.com/fram-x/FluidTransitions
+    https://reactnavigation.org/

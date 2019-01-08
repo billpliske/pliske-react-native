@@ -26,11 +26,12 @@ Play Store location: https://play.google.com/store/apps/details?id=com.billplisk
 2.  Edit `android/app/build.gradle`
 3.  Update `versionCode` (whole numbers) and `versionName` (dot upgrades)
 4.  Look in android/app/build.gradle file, and make sure you have getPassword(), def pass variable, and signingConfigs. Also look in buildTypes { release { signingConfig
-5.  `cd` to android folder
-6.  In terminal, run `./gradlew assembleRelease` ... which builds out a new apk file.
-7.  `cd` back out to main repo folder, and test with ...
-8.  `react-native run-android --variant=release` (you might need to shut down the emulator before this step works)
-9.  If everything seems to work fine, go ahead and add a new release in your Play Developer Console.
+5.  Update gradle.properties
+6.  `cd` to android folder
+7.  In terminal, run `./gradlew assembleRelease` ... which builds out a new apk file.
+8.  `cd` back out to main repo folder, and test with ...
+9.  `react-native run-android --variant=release` (you might need to shut down the emulator before this step works)
+10. If everything seems to work fine, go ahead and add a new release in your Play Developer Console.
 
 ## Debugging
 

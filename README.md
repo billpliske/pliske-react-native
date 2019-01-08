@@ -25,7 +25,7 @@ Play Store location: https://play.google.com/store/apps/details?id=com.billplisk
 1.  Make changes.
 2.  Edit `android/app/build.gradle`
 3.  Update `versionCode` (whole numbers) and `versionName` (dot upgrades)
-4.  Look in android/app/build.gradle file, and make sure you have getPassword(), def pass variable, and signingConfigs
+4.  Look in android/app/build.gradle file, and make sure you have getPassword(), def pass variable, and signingConfigs. Also look in buildTypes { release { signingConfig
 5.  `cd` to android folder
 6.  In terminal, run `./gradlew assembleRelease` ... which builds out a new apk file.
 7.  `cd` back out to main repo folder, and test with ...
